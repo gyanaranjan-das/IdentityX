@@ -1,0 +1,39 @@
+{
+  "name": "Identityx-Backend",
+  "version": "1.0.0",
+  "description": "IdentityX - Secure Authentication & Identity Platform (Backend)",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [
+    "authentication",
+    "identity",
+    "security",
+    "mongodb",
+    "nodejs",
+    "express"
+  ],
+  "author": "IdentityX",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.5",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "nodemon": "^3.1.11"
+  }
+}
