@@ -1,16 +1,17 @@
-import express from 'express';
+import express from "express";
+import authRoutes from "./modules/auth/auth.routes.js";
 
 const app = express();
 
 app.use(express.json());
 
-app.get('/health',(req,res) => {
-    res.status(200).json({
-        status: 'OK',
-        message: 'Server is healthy',
-        service: 'IdentityX Backend',
-        timestamp: new Date().toISOString()
-    })
-})
+app.use("/api/v1/auth", authRoutes);
+
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    service: "IdentityX"
+  });
+});
 
 export default app;
