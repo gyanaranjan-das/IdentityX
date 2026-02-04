@@ -1,18 +1,11 @@
-import app from './app.js';
-import { env } from './config/index.js';
-import { connectDB, disconnectDB } from './database/mongo.js';
+import app from "./app.js";
+import dotenv from "dotenv";
+import connectDB from "./db.js";
+dotenv.config();
 
-const startServer = async () => {
-    await connectDB();
-}
-const server = app.listen(env.PORT, ()=> {
-    console.log(`Server is running on port ${env.PORT}`);
-})
+const PORT = process.env.PORT || 5000;
+connectDB();
 
-process.on('SIGINT', async () => {
-    console.log('SIGINT signal received: closing HTTP server');
-    await disconnectDB();
-    server.close(() => process.exit(0));
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
-
-startServer();
